@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> heres everything i ever thought about you from my diary 💕</title>
+
+<style>
+body {
+  background: #ffe6f2;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 30px;
+}
+
+.box {
+  background: #fff0f7;
+  border: 3px solid #ff99cc;
+  border-radius: 25px;
+  padding: 25px;
+  max-width: 500px;
+  margin: auto;
+}
+
+h1 {
+  color: #cc0066;
+}
+
+.scramble {
+  font-size: 26px;
+  background: #ffd9ec;
+  padding: 12px;
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #ff99cc;
+  width: 70%;
+  font-size: 16px;
+  text-align: center;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 20px;
+  background: #ff66a3;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff3385;
+}
+
+#error {
+  color: #ff3366;
+  display: none;
+  margin-top: 10px;
+}
+
+#photos {
+  display: none;
+  margin-top: 25px;
+}
+
+.frame {
+  border: 4px dashed #ff99cc;
+  border-radius: 20px;
+  padding: 15px;
+  background: white;
+}
+
+.frame img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>Unscramble This 💖</h1>
+
+  <div class="scramble">wearysbtrr</div>
+
+  <input id="answer" placeholder="type here 💕">
+  <br>
+  <button onclick="unlock()">Unlock 💝</button>
+
+  <div id="error">nawww 😝 try again</div>
+
+  <div id="photos">
+    <h2>For You 💕</h2>
+    <div class="frame">
+      <img src="photo1.jpg">
+      <img src="photo2.jpg">
+      <img src="photo3.jpg">
+    </div>
+  </div>
+</div>
+
+<script>
+function unlock() {
+  const val = document.getElementById("answer").value.toLowerCase().trim();
+  if (val === "strawberry") {
+    document.getElementById("photos").style.display = "block";
+    document.getElementById("error").style.display = "none";
+  } else {
+    document.getElementById("error").style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
