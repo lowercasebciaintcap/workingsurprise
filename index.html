@@ -101,7 +101,7 @@
 <div class="container">
   <h1>Unscramble This 💖</h1>
 
-  <p>Hint: sweet </p>
+  <p>Hint: sweet</p>
 
   <div class="scramble">wearysbtrr</div>
 
@@ -124,7 +124,21 @@
   </div>
 </div>
 
+<!-- AUDIO FILES -->
+<audio id="bgMusic" src="diary.mp3" autoplay loop></audio>
+<audio id="winMusic" src="cas.mp3"></audio>
+
 <script>
+  const bgMusic = document.getElementById("bgMusic");
+  const winMusic = document.getElementById("winMusic");
+
+  // Fallback to ensure music starts after first interaction (browser-safe)
+  document.addEventListener("click", () => {
+    if (bgMusic.paused) {
+      bgMusic.play();
+    }
+  }, { once: true });
+
   function checkWord() {
     const input = document.getElementById("answer").value.toLowerCase().trim();
     const error = document.getElementById("error");
@@ -133,6 +147,12 @@
     if (input === "strawberry") {
       gallery.style.display = "block";
       error.style.display = "none";
+
+      // SWITCH MUSIC
+      bgMusic.pause();
+      bgMusic.currentTime = 0;
+      winMusic.play();
+
     } else {
       error.style.display = "block";
     }
